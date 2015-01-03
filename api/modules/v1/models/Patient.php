@@ -1,6 +1,7 @@
 <?php
 
 namespace api\modules\v1\models;
+
 use \yii\db\ActiveRecord;
 
 /**
@@ -11,32 +12,29 @@ use \yii\db\ActiveRecord;
  * @property string $lname
  * @property string $dx
  */
-class Patient extends ActiveRecord
-{
+class Patient extends ActiveRecord {
+
     /**
      * @inheritdoc
      */
-    public static function tableName()
-    {
+    public static function tableName() {
         return 'patient';
     }
 
     /**
      * @inheritdoc
      */
-    public function rules()
-    {
+    public function rules() {
         return [
             [['cid', 'name', 'lname'], 'required'],
-            
+            [['dx'], 'string', 'max' => 250],
         ];
     }
 
     /**
      * @inheritdoc
      */
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return [
             'cid' => 'Cid',
             'name' => 'Name',
@@ -44,4 +42,5 @@ class Patient extends ActiveRecord
             'dx' => 'Dx',
         ];
     }
+
 }
