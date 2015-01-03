@@ -1,8 +1,7 @@
 <?php
 /** 
- * @author UTEHN
+ * @author UTEHN PHNU
  */
-
 namespace api\modules\v1\controllers;
 
 use yii\rest\ActiveController;
